@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Табель сотрудников</title>
+</head>
+<body>
+    <h1>Табель сотрудников</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Сотрудник</th>
+                <th>Отработанные часы</th>
+                <th>Отсутствие</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.user.username }}</td>
+                    <td>{{ employee.work_hours }}</td>
+                    <td>{{ employee.absence }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

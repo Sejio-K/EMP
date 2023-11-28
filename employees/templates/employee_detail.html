@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль сотрудника</title>
+</head>
+<body>
+    <h1>Профиль сотрудника</h1>
+    <img src="{{ employee.photo.url }}" alt="Фото сотрудника">
+    <h2>Информация о сотруднике</h2>
+    <ul>
+        <li>ФИО: {{ employee.user.get_full_name }}</li>
+        <li>Дата рождения: {{ employee.birth_date }}</li>
+        <li>Дата окончания контракта: {{ employee.contract_end_date }}</li>
+        <li>Дата последнего инструктажа: {{ employee.last_training_date }}</li>
+        <li>Дата следующего инструктажа: {{ employee.next_training_date }}</li>
+        <li>Дата выдачи спецодежды: {{ employee.work_clothes_issue_date }}</li>
+        <li>Наличие вредных условий труда: {% if employee.harmful_work_conditions %}Да{% else %}Нет{% endif %}</li>
+    </ul>
+</body>
+</html>
